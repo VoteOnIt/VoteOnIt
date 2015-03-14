@@ -13,6 +13,12 @@ var PollSchema = new Schema({
     pollName: {
         type: String,
         trim: true
+    },
+    openTime: {
+        type: Date
+    },
+    closeTime: {
+        type: Date
     }
 });
 

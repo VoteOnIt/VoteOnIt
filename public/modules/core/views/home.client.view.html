@@ -1,24 +1,9 @@
 <section data-ng-controller="HomeController">
     <br/>
     <div class="container">
-        <div class="panel panel-default">
+        <div data-ng-repeat="poll in polls" class="panel panel-default">
             <div class="panel-body">
-                <h2>Should soda be Illegal? <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h2>Is Batman chill af? <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h2>Is food good? <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h2>For real tho? <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
+                <h2> {{poll.name}} <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
             </div>
         </div>
     </div>
