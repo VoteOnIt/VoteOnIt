@@ -140,6 +140,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
 
         $scope.vote = function(index) {
             $scope.indexss = index;
+            if(this.poll.responses[index] == null){this.poll.responses[index] = 0;}
             this.poll.responses[index] = this.poll.responses[index] + 1;
             $scope.update();
         };
