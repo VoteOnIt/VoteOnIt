@@ -67,8 +67,6 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             });
         };
 
-        $scope.poll = 0;
-
         $scope.findOne = function() {
             $scope.poll = Polls.get({
                 pollId: $stateParams.pollId
@@ -94,37 +92,10 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             if ($scope.private == false)
                 return 'btn-warning';
         };
-
-        $scope.options = {
-            chart: {
-                type: 'discreteBarChart',
-                height: 450,
-                margin: {
-                    top: 20,
-                    right: 20,
-                    bottom: 60,
-                    left: 55
-                },
-                x: function(d) {
-                    return d.label;
-                },
-                y: function(d) {
-                    return d.value;
-                },
-                showValues: true,
-                valueFormat: function(d) {
-                    return d3.format(',.4f')(d);
-                },
-                transitionDuration: 500,
-                xAxis: {
-                    axisLabel: 'X Axis'
-                },
-                yAxis: {
-                    axisLabel: 'Y Axis',
-                    axisLabelDistance: 30
-                }
-            }
+        $scope.add = function(a,b){
+            return a+b;
         };
+<<<<<<< HEAD
 
         $scope.search = function() {
             for (var poll in pollz) {
@@ -146,6 +117,8 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             $scope.data.values = this.poll.responses;
         };
 
+=======
+>>>>>>> 4acf43e5f99d72ef7b51ff7e2ae52921253ba2de
         // Set default time to 12:00 PM
         var d = new Date();
         d.setHours(12);
@@ -168,6 +141,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         };
 
         $scope.vote = function(index) {
+            $scope.indexss = index;
             this.poll.responses[index] = this.poll.responses[index] + 1;
             $scope.update();
         };
