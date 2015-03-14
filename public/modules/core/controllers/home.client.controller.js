@@ -46,7 +46,8 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 latitude: 0,
                 longitude: 0,
                 openTime: new Date(),
-                closeTime: new Date()
+                closeTime: new Date(),
+                private: this.private
             });
 
             poll.$save(function(response) {
@@ -55,7 +56,6 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 $scope.error = errorResponse.data.message;
             });
         };
-
 
         $scope.update = function() {
             var poll = $scope.poll;
@@ -71,6 +71,26 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
             $scope.poll = Polls.get({
                 pollId: $stateParams.pollId
             });
+        };
+
+        $scope.private = false;
+
+        $scope.setPrivate = function() {
+            $scope.private = true;
+        };
+
+        $scope.setPublic = function() {
+            $scope.private = false;
+        };
+
+        $scope.isPrivate = function() {
+            if ($scope.private == true)
+                return 'btn-warning';
+        };
+
+        $scope.isPublic = function() {
+            if ($scope.private == false)
+                return 'btn-warning';
         };
 
         // Set default time to 12:00 PM

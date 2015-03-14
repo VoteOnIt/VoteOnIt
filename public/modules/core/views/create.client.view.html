@@ -7,8 +7,8 @@
 
 	<!-- Public or Private -->
 	<div class="btn-group btn-group-justified">
-	    <a href="javascript:void(0)" class="btn btn-flat btn-lg">Public</a>
-	    <a href="javascript:void(0)" class="btn btn-flat btn-lg">Private</a>
+	    <a ng-click="setPublic()"  data-ng-class="isPublic()" class="btn btn-flat btn-lg">Public</a>
+	    <a ng-click="setPrivate()" data-ng-class="isPrivate()" class="btn btn-flat btn-lg">Private</a>
 	</div>
 
   <br/>
