@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', '$location', '$state', 'Polls', 'Authentication',
-    function($scope, $location, $state, Polls, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', '$window', '$location', '$state', 'Polls', 'Authentication',
+    function($scope, $window, $location, $state, Polls, Authentication) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
@@ -16,9 +16,16 @@ angular.module('core').controller('HomeController', ['$scope', '$location', '$st
             }, function(error) {
                 alert(error);
             });
+            if ($scope.postion == undefined) {
+                $window.navigator.geolocation.getCurrentPosition(function(position) {
+                    $scope.$apply(function() {
+                        $scope.position = position;
+                    });
+                }, function(error) {
+                    alert(error);
+                });
+            }
         };
-
-        $scope.geolocate();
 
         $scope.list = function() {
             $scope.polls = Polls.query();

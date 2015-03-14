@@ -8,5 +8,10 @@ module.exports = function(app) {
         .get(polls.list)
         .post(polls.create);
 
+    app.route('/polls/:pollId')
+        .get(polls.read)
+        .put(polls.update)
+        .delete(polls.delete);
+
     app.param('pollId', polls.pollByID);
 };

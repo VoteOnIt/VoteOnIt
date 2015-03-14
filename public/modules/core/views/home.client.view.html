@@ -1,9 +1,9 @@
 <section data-ng-controller="HomeController" data-ng-init="list()">
     <div class="container">
         <a href="/#!/create"> <div type="submit" class="btn btn-warning btn-block btn-large">Create</div> </a>
-        <div data-ng-repeat="poll in polls" class="panel panel-default">
+        <div data-ng-repeat="poll in polls" data-ng-href="#!/vote/{{poll._id}}" class="panel panel-default">
             <div class="panel-body">
-                <h2> {{poll.name}} <button type="button" style="vertical-align: middle" class="btn btn-primary pull-right">Vote</button> </h2>
+                <h2> {{poll.name}} <a href="#!/vote/{{poll._id}}"> <button type="button"  style="vertical-align: middle" class="btn btn-primary pull-right">Vote</button> </a> </h2>
             </div>
         </div>
     </div>
