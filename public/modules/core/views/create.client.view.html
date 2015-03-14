@@ -40,69 +40,28 @@
 	<div class="col-lg-2"></div>
   </div>
 </div>
-<div class = "container">
-  <br/>
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control" ng-model="poll.answers[0]" placeholder="Response Option">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
+<div data-ng-repeat="choice in choices track by $index">
+  <div class = "container">
+    <br/>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+	<div class = "input-group">
+	  <span class="input-group-addon">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	  </span>
+	  <input type="text" class="form-control" ng-model="poll.answers[choice]" placeholder="Response Option">
+	</div>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
   </div>
 </div>
-<div class = "container">
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control"  ng-model="poll.answers[1]" placeholder="Response Option">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
-  </div>
-</div>
-<div class = "container">
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control" ng-model="poll.answers[2]" placeholder="Response Option">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
-  </div>
-</div>
-<div class = "container">
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control" ng-model="poll.answers[3]" placeholder="Response Option">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
-  </div>
-</div>
-
 <div class = "container">
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
 	<!-- Add option button -->
-	<div class="btn-group" role="group" aria-label="...">
+	<div type="submit" ng-click="addResponse(poll.answers)" class="btn-group" role="group" aria-label="...">
 	  <a href="javascript:void(0)" class="btn btn-primary">
 	  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	  	<span style="padding-left: 10px;">Add Option</span>
