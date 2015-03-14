@@ -1,5 +1,15 @@
 <section data-ng-controller="HomeController" data-ng-init="list()">
     <div class="container">
+        <div class="row">
+        <div class="col-lg-6">
+                <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+            </div>
+        </div>
         <a href="/#!/create"> <div type="submit" class="btn btn-warning btn-block btn-large">Create</div> </a>
         <div data-ng-repeat="poll in polls" data-ng-href="#!/vote/{{poll._id}}" class="panel panel-default">
             <div class="panel-body">
