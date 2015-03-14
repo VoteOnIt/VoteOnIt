@@ -9,6 +9,12 @@ angular.module('core').controller('HomeController', ['$scope', '$location', '$st
         $scope.list = function() {
             $scope.polls = Polls.query();
         };
+        $scope.pollOpened = function(pollName){
+            //Handle polled called logic here
+            console.log(pollName);
+            //Log button to magic
+            window.location.href = "/#!/vote";
+        };
 
         $scope.create = function() {
             var poll = new Polls({
