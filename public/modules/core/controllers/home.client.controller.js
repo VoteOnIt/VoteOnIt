@@ -40,7 +40,7 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
             var poll = new Polls({
                 name: this.poll.name,
                 answers: this.poll.answers,
-                responses: [0, 0, 0],
+                responses: 0,
                 //latitude: this.position.coords.latitude,
                 //longitude: this.position.coords.longitude,
                 latitude: 0,
@@ -115,7 +115,8 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         };
 
         $scope.vote = function(index) {
-            this.answers[index] = this.answers[index] + 1;
+            $scope.indexss = index;
+            this.poll.responses[index] = this.poll.responses[index] + 1;
             $scope.update();
         };
     }

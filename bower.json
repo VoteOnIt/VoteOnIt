@@ -16,6 +16,13 @@
     "angular-ui-router": "~0.2.11",
     "moment": "~2.9.0",
     "bootstrap-material-design": "~0.2.2",
-    "geolib": "~2.0.9"
+    "geolib": "~2.0.9",
+    "angular-nvd3": "~0.1.1",
+    "d3": "~3.5.5",
+    "nvd3": "~1.7.1"
+  },
+  "resolutions": {
+    "d3": "~3.3.13",
+    "nvd3": "~1.7.1"
   }
 }
