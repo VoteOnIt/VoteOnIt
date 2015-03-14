@@ -2,15 +2,15 @@
     <div class="container">
     	  <!-- Search Bar-->
        <div class="input-group" style="padding: 10px 5px 5px 5px;">
-		<input type="text" class="form-control" style="font-size:100%; margin-top:8px;" placeholder="Search for a private poll...">
-		<span class="input-group-btn">
+		<input type="text" ng-model="searchField" class="form-control" style="font-size:100%; margin-top:8px;" placeholder="Search for a private poll...">
+		<span class="input-group-btn" ng-click="search()">
 		  <a href="javascript:void(0)" class="btn btn-default btn-sm">Search</a>
 		</span>
 	 </div>
 		
         <a href="/#!/create"> <div type="submit" class="btn btn-warning btn-block btn-large">Create</div> </a>
         
-        <div data-ng-repeat="poll in polls" data-ng-href="#!/vote/{{poll._id}}" class="panel panel-default">
+        <div data-ng-repeat="poll in polls" data-ng-show="poll.private == false" data-ng-href="#!/vote/{{poll._id}}" class="panel panel-default">
             <div class="panel-body">
                 <h3> {{poll.name}} <a href="#!/vote/{{poll._id}}"> <button type="button"  style="vertical-align: middle" class="btn btn-primary pull-right">Vote</button> </a> </h3>
             </div>

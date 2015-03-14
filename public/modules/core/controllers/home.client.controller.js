@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', '$stateParams', '$window', '$location', '$state', 'Polls', 'Authentication',
-    function($scope, $stateParams, $window, $location, $state, Polls, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', '$q', '$stateParams', '$window', '$location', '$state', 'Polls', 'Authentication',
+    function($scope, $q, $stateParams, $window, $location, $state, Polls, Authentication) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
@@ -61,7 +61,7 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
             var poll = $scope.poll;
 
             poll.$update(function() {
-                $location.path('polls/' + poll._id);
+                $location.path('results/' + poll._id);
             }, function(errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
@@ -122,6 +122,16 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 yAxis: {
                     axisLabel: 'Y Axis',
                     axisLabelDistance: 30
+                }
+            }
+        };
+
+        $scope.search = function() {
+            for (var poll in pollz) {
+                if (poll.name == this.searchField) {
+                    $location.path('vote/' + poll._id);
+                } else {
+                    console.log('nope');
                 }
             }
         };
