@@ -93,6 +93,8 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 return 'btn-warning';
         };
 
+        $scope.data;
+
         // Set default time to 12:00 PM
         var d = new Date();
         d.setHours(12);
@@ -115,7 +117,6 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         };
 
         $scope.vote = function(index) {
-            $scope.indexss = index;
             this.poll.responses[index] = this.poll.responses[index] + 1;
             $scope.update();
         };
