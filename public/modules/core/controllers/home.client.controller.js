@@ -9,24 +9,24 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         window.MY_SCOPE = $scope;
         $scope.geolib = geolib;
 
-        $scope.geolocate = function() {
-            window.navigator.geolocation.getCurrentPosition(function(position) {
-                $scope.$apply(function() {
-                    $scope.position = position;
-                });
-            }, function(error) {
-                alert(error);
-            });
-            if ($scope.postion == undefined) {
-                $window.navigator.geolocation.getCurrentPosition(function(position) {
-                    $scope.$apply(function() {
-                        $scope.position = position;
-                    });
-                }, function(error) {
-                    alert(error);
-                });
-            }
-        };
+        // $scope.geolocate = function() {
+        //     window.navigator.geolocation.getCurrentPosition(function(position) {
+        //         $scope.$apply(function() {
+        //             $scope.position = position;
+        //         });
+        //     }, function(error) {
+        //         alert(error);
+        //     });
+        //     if ($scope.postion == undefined) {
+        //         $window.navigator.geolocation.getCurrentPosition(function(position) {
+        //             $scope.$apply(function() {
+        //                 $scope.position = position;
+        //             });
+        //         }, function(error) {
+        //             alert(error);
+        //         });
+        //     }
+        // };
 
         $scope.list = function() {
             $scope.polls = Polls.query();
@@ -41,8 +41,10 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 name: this.poll.name,
                 answers: this.poll.answers,
                 responses: [0, 0, 0],
-                latitude: this.position.coords.latitude,
-                longitude: this.position.coords.longitude,
+                //latitude: this.position.coords.latitude,
+                //longitude: this.position.coords.longitude,
+                latitude: 0,
+                longitude: 0,
                 openTime: new Date(),
                 closeTime: new Date()
             });
