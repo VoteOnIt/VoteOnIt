@@ -4,20 +4,11 @@
     <p data-ng-bind="poll.name"></p>
 </div>
 
-<div class="col-lg-14">
-    <button data-ng-bind="poll.answers[0]" class="btn btn-lg btn-block btn-primary" type="button">Response 1</button>
-</div>
-
-<div class="col-lg-14">
-    <button class="btn btn-lg btn-block btn-primary" type="button">Response 2</button>
-</div>
-
-<div class="col-lg-14">
-    <button class="btn btn-lg btn-block btn-primary" type="button">Response 3</button>
-</div>
-
-<div class="col-lg-14">
-    <button class="btn btn-lg btn-block btn-primary" type="button">Response 4</button>
+<div data-ng-repeat="answer in poll.answers track by $index">
+    <div class="col-lg-14">
+        <button data-ng-bind="answer" class="btn btn-lg btn-block btn-primary" type="button"> </button>
+    </div>
 </div>
 
 </section>
+
