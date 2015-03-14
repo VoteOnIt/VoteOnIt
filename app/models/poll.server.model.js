@@ -21,6 +21,12 @@ var PollSchema = new Schema({
     responses: {
         type: [Number]
     },
+    latitude: {
+        type: Number
+    },
+    longitude: {
+        type: Number
+    },
     openTime: {
         type: Date
     },

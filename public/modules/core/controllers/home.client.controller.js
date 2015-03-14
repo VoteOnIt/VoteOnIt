@@ -6,6 +6,20 @@ angular.module('core').controller('HomeController', ['$scope', '$location', '$st
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
+        window.MY_SCOPE = $scope;
+
+        $scope.geolocate = function() {
+            window.navigator.geolocation.getCurrentPosition(function(position) {
+                $scope.$apply(function() {
+                    $scope.position = position;
+                });
+            }, function(error) {
+                alert(error);
+            });
+        };
+
+        $scope.geolocate();
+
         $scope.list = function() {
             $scope.polls = Polls.query();
         };
@@ -15,6 +29,8 @@ angular.module('core').controller('HomeController', ['$scope', '$location', '$st
                 name: this.poll.name,
                 answers: this.poll.answers,
                 responses: [0, 0, 0],
+                latitude: this.position.coords.latitude,
+                longitude: this.position.coords.longitude,
                 openTime: new Date(),
                 closeTime: new Date()
             });
