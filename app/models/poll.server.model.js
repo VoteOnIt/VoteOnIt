@@ -14,6 +14,13 @@ var PollSchema = new Schema({
         type: String,
         trim: true
     },
+    answers: {
+        type: [String],
+        trim: true
+    },
+    responses: {
+        type: [Number]
+    },
     openTime: {
         type: Date
     },
