@@ -1,24 +1,20 @@
-<section data-ng-controller="HomeController">
-    <br/>
+<section data-ng-controller="HomeController" data-ng-init="list(); geolocate()">
     <div class="container">
-        <div data-ng-repeat="poll in polls" class="panel panel-default">
-            <div class="panel-body">
-                <h2> {{poll.name}} <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
+        <div class="row">
+        <div class="col-lg-6">
+                <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
             </div>
         </div>
-         <div class="panel panel-default">
+        <a href="/#!/create"> <div type="submit" class="btn btn-warning btn-block btn-large">Create</div> </a>
+        <div data-ng-repeat="poll in polls" data-ng-href="#!/vote/{{poll._id}}" class="panel panel-default">
             <div class="panel-body">
-                <h2> Test Poll <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
+                <h2> {{poll.name}} <a href="#!/vote/{{poll._id}}"> <button type="button"  style="vertical-align: middle" class="btn btn-primary pull-right">Vote</button> </a> </h2>
             </div>
         </div>
     </div>
-    
-    	<div class="btn-group btn-group-justified" role="group" aria-label="...">
-	  <div class="btn-group btn-group-lg" role="group">
-	    <button type="button" class="btn btn-default">Public</button>
-	  </div>
-	  <div class="btn-group btn-group-lg" role="group">
-	    <button type="button" class="btn btn-default">Private</button>
-	  </div>
-	</div>
 </section>
