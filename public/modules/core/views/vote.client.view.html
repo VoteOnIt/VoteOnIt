@@ -1,11 +1,11 @@
-<section data-ng-controller="HomeController">
-<br>
+<section data-ng-controller="HomeController" data-ng-init="findOne()">
+<br/>
 <div class="jumbotron">
-    <p>THIS IS THE QUESTION THAT HAS BEEN POSED THAT YOU WILL ANSWER.</p>
+    <p data-ng-bind="poll.name"></p>
 </div>
 
 <div class="col-lg-14">
-    <button class="btn btn-lg btn-block btn-primary" type="button">Response 1</button>
+    <button data-ng-bind="poll.answers[0]" class="btn btn-lg btn-block btn-primary" type="button">Response 1</button>
 </div>
 
 <div class="col-lg-14">

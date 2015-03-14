@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', '$window', '$location', '$state', 'Polls', 'Authentication',
-    function($scope, $window, $location, $state, Polls, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', '$stateParams', '$window', '$location', '$state', 'Polls', 'Authentication',
+    function($scope, $stateParams, $window, $location, $state, Polls, Authentication) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
@@ -46,6 +46,22 @@ angular.module('core').controller('HomeController', ['$scope', '$window', '$loca
                 $location.path('/');
             }, function(errorResponse) {
                 $scope.error = errorResponse.data.message;
+            });
+        };
+
+        $scope.update = function() {
+            var poll = $scope.poll;
+
+            poll.$update(function() {
+                $location.path('polls/' + poll._id);
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
+        };
+
+        $scope.findOne = function() {
+            $scope.poll = Polls.get({
+                pollId: $stateParams.pollId
             });
         };
 

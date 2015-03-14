@@ -86,7 +86,7 @@ exports.list = function(req, res) {
 };
 
 exports.pollByID = function(req, res, next, id) {
-    Poll.findById(id).populate('user', 'displayName').exec(function(err, poll) {
+    Poll.findById(id).exec(function(err, poll) {
         if (err) return next(err);
         if (!poll) return next(new Error('Failed to load Poll ' + id));
         req.poll = poll;
