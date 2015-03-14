@@ -2,10 +2,10 @@
 	<div class="col-md-12 text-center">
 		<div style="padding:20px;">
 			<a href="/auth/facebook" class="undecorated-link">
-				<img src="/modules/users/img/buttons/facebook_long.png" width="250px">
+				<img src="/modules/users/img/buttons/facebook_long_login.png" width="250" height="auto">
 			</a>
 		</div>
-		<!--<a href="/auth/twitter" class="undecorated-link">
+<!-- 		<a href="/auth/twitter" class="undecorated-link">
 			<img src="/modules/users/img/buttons/twitter.png">
 		</a>
 		<a href="/auth/google" class="undecorated-link">
@@ -16,7 +16,7 @@
 		</a>
 		<a href="/auth/github" class="undecorated-link">
 			<img src="/modules/users/img/buttons/github.png">
-		</a>-->
+		</a> -->
 	</div>
 	
 	<div style="padding: 0px 25px;">
@@ -24,29 +24,20 @@
 	</div>
 	
 	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
-		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+		<form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
-				<div class="form-group">
-					<input type="text" id="fullname" name="fullname" class="form-control" data-ng-model="credentials.fullname" placeholder="Full name">
-				</div>
-				
-				<div style="padding:5px;"></div>
-				
 				<div class="form-group">
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
 				</div>
-				
-				<div style="padding:5px;"></div>
-				
 				<div class="form-group">
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
-				
-				<div style="padding:5px;"></div>
-				
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
-					<a href="/#!/signin" class="show-signup">Sign in</a>
+					<button type="submit" class="btn btn-primary">Sign in</button>&nbsp; or&nbsp;
+					<a href="/#!/signup">Sign up</a>
+				</div>
+				<div class="forgot-password">
+					<a href="/#!/password/forgot">Forgot your password?</a>
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>
