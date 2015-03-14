@@ -101,15 +101,18 @@
 <div class = "container">
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
-	<!-- Add option button -->
+<!-- Add option button -->
 	<div class="btn-group" role="group" aria-label="...">
-	  <a href="javascript:void(0)" class="btn btn-primary">
+	  <a href="javascript:void(0)" class="btn btn-success">
 	  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 	  	<span style="padding-left: 10px;">Add Option</span>
 	  </a>
 	</div>
-    <div type="submit" ng-click="create()" class="btn btn-warning btn-block btn-large">Submit</div>
+	
+    <div type="submit" ng-click="create()" class="btn btn-primary btn-block btn-large">Submit</div>
     </div>
     <div class="col-lg-2"></div>
 </div>
+
+
 </section>

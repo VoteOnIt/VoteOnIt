@@ -1,0 +1,24 @@
+<section data-ng-controller="HomeController">
+    <br/>
+    <div class="container">
+        <div data-ng-repeat="poll in polls" class="panel panel-default">
+            <div class="panel-body">
+                <h2> {{poll.name}} <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
+            </div>
+        </div>
+         <div class="panel panel-default">
+            <div class="panel-body">
+                <h2> Test Poll <button type="button" class="btn btn-primary pull-right">Vote</button></h2>
+            </div>
+        </div>
+    </div>
+    
+    	<div class="btn-group btn-group-justified" role="group" aria-label="...">
+	  <div class="btn-group btn-group-lg" role="group">
+	    <button type="button" class="btn btn-default">Public</button>
+	  </div>
+	  <div class="btn-group btn-group-lg" role="group">
+	    <button type="button" class="btn btn-default">Private</button>
+	  </div>
+	</div>
+</section>
