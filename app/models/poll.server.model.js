@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Poll Schema
  */
 var PollSchema = new Schema({
-    pollName: {
+    name: {
         type: String,
         trim: true
     },

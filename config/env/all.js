@@ -28,7 +28,8 @@ module.exports = {
                 'public/lib/angular-ui-utils/ui-utils.js',
                 'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
                 'public/lib/bootstrap-material-design/dist/js/material.js',
-                'public/lib/bootstrap-material-design/dist/js/ripple.js'
+                'public/lib/bootstrap-material-design/dist/js/ripple.js',
+                'public/lib/moment/moment.js'
             ]
         },
         css: [
