@@ -96,15 +96,16 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             return a + b;
         };
 
-        $scope.search = function() {
-            for (var poll in pollz) {
-                if (poll.name == this.searchField) {
-                    $location.path('vote/' + poll._id);
-                } else {
-                    console.log('nope');
-                }
-            }
-        };
+        // $scope.search = function() {
+        //     var pollsearch = Polls.query();
+        //     angular.forEach(pollsearch, function(item) {
+        //             if (item.name == this.searchField) {
+        //                 $location.path('vote/' + item._id);
+        //             } else {
+        //                 console.log('nope');
+        //             }
+        //         }
+        //     };
 
         $scope.populate = function() {
             $scope.findOne();
