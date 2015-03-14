@@ -113,5 +113,10 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         $scope.clear = function() {
             $scope.mytime = null;
         };
+
+        $scope.vote = function(index) {
+            this.answers[index] = this.answers[index] + 1;
+            $scope.update();
+        };
     }
 ]);

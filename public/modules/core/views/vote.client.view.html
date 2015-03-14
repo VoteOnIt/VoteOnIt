@@ -6,7 +6,7 @@
 
 <div data-ng-repeat="answer in poll.answers track by $index">
     <div class="col-lg-14">
-        <button data-ng-bind="answer" class="btn btn-lg btn-block btn-primary" type="button"> </button>
+        <button data-ng-bind="answer" class="btn btn-lg btn-block btn-primary" ng-click="vote($index)" type="button"> </button>
     </div>
 </div>
 
