@@ -67,6 +67,8 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
             });
         };
 
+        $scope.poll = 0;
+
         $scope.findOne = function() {
             $scope.poll = Polls.get({
                 pollId: $stateParams.pollId
@@ -93,7 +95,46 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 return 'btn-warning';
         };
 
-        $scope.data;
+        $scope.options = {
+            chart: {
+                type: 'discreteBarChart',
+                height: 450,
+                margin: {
+                    top: 20,
+                    right: 20,
+                    bottom: 60,
+                    left: 55
+                },
+                x: function(d) {
+                    return d.label;
+                },
+                y: function(d) {
+                    return d.value;
+                },
+                showValues: true,
+                valueFormat: function(d) {
+                    return d3.format(',.4f')(d);
+                },
+                transitionDuration: 500,
+                xAxis: {
+                    axisLabel: 'X Axis'
+                },
+                yAxis: {
+                    axisLabel: 'Y Axis',
+                    axisLabelDistance: 30
+                }
+            }
+        };
+
+        $scope.populate = function() {
+            $scope.findOne();
+            $scope.data = {
+                key: 0,
+                values: 0
+            };
+            $scope.data.key = this.poll.name;
+            $scope.data.values = this.poll.responses;
+        };
 
         // Set default time to 12:00 PM
         var d = new Date();

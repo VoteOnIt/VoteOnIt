@@ -1,3 +1,19 @@
-<section data-ng-controller="HomeController">
-    <nvd3 options="options" data="data"></nvd3>
+<section data-ng-controller="HomeController" data-ng-init="populate()">
+   <!-- <nvd3 options="options" data="data"></nvd3> -->
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{poll.name}}</div>
+        <table class="table">
+            <tr>
+            <th>Response</th>
+            <th>Total</th>
+            </tr>
+            <tr data-ng-repeat="response in poll.responses track by $index"
+                <td></td>
+                <td>{{ poll.answers[$index] }}</td>
+                <td>{{ response }}</td>
+            </tr>
+        </table>
+        
+    </div>
 </section>
