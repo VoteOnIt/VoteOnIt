@@ -15,7 +15,8 @@ module.exports = {
             css: [
                 'public/lib/bootstrap/dist/css/bootstrap.css',
                 'public/lib/bootstrap-material-design/dist/css/material.css',
-                'public/lib/bootstrap-material-design/dist/css/ripple.css'
+                'public/lib/bootstrap-material-design/dist/css/ripple.css',
+                'public/lib/nvd3/build/nv.d3.css'
             ],
             js: [
                 'public/lib/angular/angular.js',
@@ -30,7 +31,10 @@ module.exports = {
                 'public/lib/bootstrap-material-design/dist/js/material.js',
                 'public/lib/bootstrap-material-design/dist/js/ripple.js',
                 'public/lib/moment/moment.js',
-                'public/lib/geolib/dist/geolib.js'
+                'public/lib/geolib/dist/geolib.js',
+                'public/lib/d3/d3.js',
+                'public/lib/nvd3/build/nv.d3.js',
+                'public/lib/angular-nvd3/dist/angular-nvd3.js'
             ]
         },
         css: [
