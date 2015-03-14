@@ -30,7 +30,11 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         $scope.list = function() {
             $scope.polls = Polls.query();
         };
+        $scope.choices = [1,2,3]
 
+        $scope.addResponse = function(answers){
+            $scope.choices.push(($scope.choices.length+1));
+        }
         $scope.create = function() {
             var poll = new Polls({
                 name: this.poll.name,
@@ -48,6 +52,7 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
                 $scope.error = errorResponse.data.message;
             });
         };
+
 
         $scope.update = function() {
             var poll = $scope.poll;
