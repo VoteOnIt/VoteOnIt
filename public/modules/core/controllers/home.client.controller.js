@@ -92,10 +92,9 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             if ($scope.private == false)
                 return 'btn-warning';
         };
-        $scope.add = function(a,b){
-            return a+b;
+        $scope.add = function(a, b) {
+            return a + b;
         };
-<<<<<<< HEAD
 
         $scope.search = function() {
             for (var poll in pollz) {
@@ -117,8 +116,6 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             $scope.data.values = this.poll.responses;
         };
 
-=======
->>>>>>> 4acf43e5f99d72ef7b51ff7e2ae52921253ba2de
         // Set default time to 12:00 PM
         var d = new Date();
         d.setHours(12);
