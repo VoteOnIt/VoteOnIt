@@ -136,8 +136,10 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         };
 
         $scope.vote = function(index) {
-            if (this.poll.responses[index] == null) {
-                this.poll.responses[index] = 0;
+            for (var i = 0; i < this.poll.answers.length; i++) {
+                if (this.poll.responses[i] == null) {
+                    this.poll.responses[i] = 0;
+                }
             }
             this.poll.responses[index] = this.poll.responses[index] + 1;
             $scope.update();
