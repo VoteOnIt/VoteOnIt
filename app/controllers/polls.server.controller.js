@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
+    errorHandler = require('./errors.server.controller'),
+    Poll = mongoose.model('Poll'),
     _ = require('lodash');
 
 /**

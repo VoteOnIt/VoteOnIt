@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', 'Polls', 'Authentication',
-    function($scope, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', '$location', '$state', 'Polls', 'Authentication',
+    function($scope, $location, $state, Polls, Authentication) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
 
@@ -14,9 +14,9 @@ angular.module('core').controller('HomeController', ['$scope', 'Polls', 'Authent
             var poll = new Polls({
                 name: this.poll.name,
                 answers: this.poll.answers,
-                responses: [],
-                openTime: this.poll.openTime,
-                closeTime: this.poll.closeTime
+                responses: [0, 0, 0],
+                openTime: new Date(),
+                closeTime: new Date()
             });
 
             poll.$save(function(response) {

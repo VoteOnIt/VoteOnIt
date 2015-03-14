@@ -6,7 +6,7 @@ module.exports = function(app) {
 
     app.route('/polls')
         .get(polls.list)
-        .post(users.requiresLogin, polls.create);
+        .post(polls.create);
 
     app.param('pollId', polls.pollByID);
 };
