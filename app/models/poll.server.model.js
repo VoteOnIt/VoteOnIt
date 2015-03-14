@@ -18,6 +18,9 @@ var PollSchema = new Schema({
         type: [String],
         trim: true
     },
+    private: {
+        type: Boolean
+    },
     responses: {
         type: [Number]
     },

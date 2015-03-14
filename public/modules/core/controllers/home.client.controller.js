@@ -7,6 +7,7 @@ angular.module('core').controller('HomeController', ['$scope', '$stateParams', '
         $scope.authentication = Authentication;
 
         window.MY_SCOPE = $scope;
+        $scope.geolib = geolib;
 
         $scope.geolocate = function() {
             window.navigator.geolocation.getCurrentPosition(function(position) {
