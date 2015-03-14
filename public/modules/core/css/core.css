@@ -13,3 +13,10 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+body .well
+.container .well.well-sm,
+.container-fluid .well.well-sm {
+  padding: 10px;
+  padding-bottom: 2px;
+}
