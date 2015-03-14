@@ -27,7 +27,15 @@
 		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
 			<fieldset>
 				<div class="form-group">
-					<input type="text" id="fullname" name="fullname" class="form-control" data-ng-model="credentials.fullname" placeholder="Full Name">
+					<div class="row">
+						<div class="col-xs-6">
+						<input type="text" id="firstname" name="firstname" class="form-control" data-ng-model="credentials.firstname" placeholder="First Name">
+						</div>
+						
+						<div class="col-xs-6">
+						<input type="text" id="lastname" name="lastname" class="form-control" data-ng-model="credentials.lastname" placeholder="Last Name">
+						</div>
+					</div>
 				</div>
 				
 				<div style="padding:5px;"></div>
