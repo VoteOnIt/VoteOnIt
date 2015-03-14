@@ -13,7 +13,9 @@ module.exports = {
     assets: {
         lib: {
             css: [
-                'public/lib/bootstrap/dist/css/bootstrap.css'
+                'public/lib/bootstrap/dist/css/bootstrap.css',
+                'public/lib/bootstrap-material-design/dist/css/material.css',
+                'public/lib/bootstrap-material-design/dist/css/ripple.css'
             ],
             js: [
                 'public/lib/angular/angular.js',
@@ -24,7 +26,9 @@ module.exports = {
                 'public/lib/angular-sanitize/angular-sanitize.js',
                 'public/lib/angular-ui-router/release/angular-ui-router.js',
                 'public/lib/angular-ui-utils/ui-utils.js',
-                'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+                'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+                'public/lib/bootstrap-material-design/dist/js/material.js',
+                'public/lib/bootstrap-material-design/dist/js/ripple.js'
             ]
         },
         css: [
