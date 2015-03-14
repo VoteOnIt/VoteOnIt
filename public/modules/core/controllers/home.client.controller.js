@@ -20,7 +20,7 @@ angular.module('core').controller('HomeController', ['$scope', '$location', '$st
             });
 
             poll.$save(function(response) {
-                $state.reload();
+                $location.path('/');
             }, function(errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
