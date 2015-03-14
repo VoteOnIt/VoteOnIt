@@ -49,9 +49,12 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 closeTime: new Date(),
                 private: this.private
             });
-
             poll.$save(function(response) {
-                $location.path('/');
+                if (response.private == false) {
+                    $location.path('/');
+                } else {
+                    $location.path('key/' + response._id);
+                }
             }, function(errorResponse) {
                 $scope.error = errorResponse.data.message;
             });
@@ -96,16 +99,9 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             return a + b;
         };
 
-        // $scope.search = function() {
-        //     var pollsearch = Polls.query();
-        //     angular.forEach(pollsearch, function(item) {
-        //             if (item.name == this.searchField) {
-        //                 $location.path('vote/' + item._id);
-        //             } else {
-        //                 console.log('nope');
-        //             }
-        //         }
-        //     };
+        $scope.search = function() {
+            $location.path('vote/' + this.searchField);
+        };
 
         $scope.populate = function() {
             $scope.findOne();
