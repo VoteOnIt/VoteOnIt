@@ -12,7 +12,7 @@
                 <td></td>
                 <td>{{ poll.answers[$index] }}</td>
                 <td>{{ response }}</td>
-		<td>{{poll.responses.reduce(add,0)/100 + '%'}}</td>
+		<td>{{(response/poll.responses.reduce(add,0)) + '%'}}</td>
             </tr>
         </table>
         
