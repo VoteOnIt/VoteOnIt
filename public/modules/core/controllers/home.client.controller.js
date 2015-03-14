@@ -39,6 +39,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         $scope.create = function() {
             var poll = new Polls({
                 name: this.poll.name,
+                question: this.poll.question,
                 answers: this.poll.answers,
                 responses: 0,
                 //latitude: this.position.coords.latitude,

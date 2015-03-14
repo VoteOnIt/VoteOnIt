@@ -1,7 +1,7 @@
 <section data-ng-controller="HomeController" data-ng-init="findOne()">
 <br/>
 <div class="jumbotron">
-    <p data-ng-bind="poll.name"></p>
+    <p data-ng-bind="poll.question"></p>
 </div>
 
 <div data-ng-repeat="answer in poll.answers track by $index">
