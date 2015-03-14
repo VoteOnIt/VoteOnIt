@@ -1,9 +1,10 @@
 <section class="row" data-ng-controller="AuthenticationController">
 	<div class="col-md-12 text-center">
-		<a href="/auth/facebook" class="undecorated-link">
-			<img src="/modules/users/img/buttons/fb-button.png" width="250" height="auto">
-		</a>
-		<hr>
+		<div style="padding:20px;">
+			<a href="/auth/facebook" class="undecorated-link">
+				<img src="/modules/users/img/buttons/facebook_long_login.png" width="250" height="auto">
+			</a>
+		</div>
 <!-- 		<a href="/auth/twitter" class="undecorated-link">
 			<img src="/modules/users/img/buttons/twitter.png">
 		</a>
@@ -17,17 +18,26 @@
 			<img src="/modules/users/img/buttons/github.png">
 		</a> -->
 	</div>
+	
+	<div style="padding: 0px 25px;">
+		<div height="0px" style="margin: 0px 10px 20px 10px; border-top: 2px solid #999;"></div>
+	</div>
+	
 	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
 		<form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
 				<div class="form-group">
-					<label for="username">Username</label>
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
 				</div>
+				
+				<div style="padding:5px;"></div>
+				
 				<div class="form-group">
-					<label for="password">Password</label>
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
+				
+				<div style="padding:5px;"></div>
+				
 				<div class="text-center form-group">
 					<button type="submit" class="btn btn-primary">Sign in</button>&nbsp; or&nbsp;
 					<a href="/#!/signup">Sign up</a>
