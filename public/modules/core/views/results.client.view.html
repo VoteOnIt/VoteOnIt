@@ -7,12 +7,13 @@
             <tr>
             <th>Response</th>
             <th>Total</th>
+	    <th>Percentage</th>
             </tr>
             <tr data-ng-repeat="response in poll.responses track by $index"
                 <td></td>
                 <td>{{ poll.answers[$index] }}</td>
                 <td>{{ response }}</td>
-		<td>{{(response/poll.responses.reduce(add,0)) + '%'}}</td>
+		<td>{{(response*100/poll.responses.reduce(add,0)).toPrecision(4) + '%'}}</td>
             </tr>
         </table>
         
