@@ -89,6 +89,7 @@ var UserSchema = new Schema({
 	resetPasswordExpires: {
 		type: Date
 	}
+	createdAt: {type: Date, expires: 60};
 });
 
 /**
