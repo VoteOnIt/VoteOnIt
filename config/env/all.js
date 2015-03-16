@@ -6,7 +6,7 @@ module.exports = {
         description: 'Vote on things!',
         keywords: 'MongoDB, Express, AngularJS, Node.js'
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 8080,
     templateEngine: 'swig',
     sessionSecret: 'MEAN',
     sessionCollection: 'sessions',
