@@ -15,7 +15,7 @@ var PollSchema = new Schema({
         trim: true
     },
     createdAt: {type: Date, expireAfterSeconds:((24*60*60*7))},
-    //Sets things to expire in a week. Poll expire here! But can't get it working!
+    //Polls expire here!
     customOptions: {
         type: Boolean
     },
