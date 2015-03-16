@@ -71,7 +71,7 @@
        <div class="input-group">
 	 <span class="input-group-addon">
 	 Allow custom poll options?
-           <input type="checkbox" ng-click="setCustomOptionsOpposite(poll)" ng-model = "poll.customOptions" aria-label="...">
+           <input type="checkbox" data-ng-class="poll.customOptions" ng-click="setCustomOptionsOpposite(poll)" ng-model="poll.customOptions" aria-label="...">
 	 </span>
        </div><!-- /input-group -->
      </div><!-- /.col-lg-6 -->

@@ -46,7 +46,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 //longitude: this.position.coords.longitude,
                 latitude: 0,
                 longitude: 0,
-                customOptions: false, 
+                customOptions: this.poll.question,
                 openTime: new Date(),
                 closeTime: new Date(),
                 private: this.private
@@ -71,10 +71,13 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 $scope.error = errorResponse.data.message;
             });
         };
-
-        $scope.setCustomOptionsOpposite = function(poll) {
-            poll.customOptions = !poll.customOptions;
+        $scope.showCreateCustomOptions = function(poll){
             console.log(poll.customOptions);
+            return poll.customOptions;
+        };
+        $scope.setCustomOptionsOpposite = function(poll) {
+            $scope.poll.customOptions = !$scope.poll.customOptions;
+            console.log($scope.poll.customOptions);
         };
         $scope.findOne = function() {
             $scope.poll = Polls.get({
