@@ -46,6 +46,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 //longitude: this.position.coords.longitude,
                 latitude: 0,
                 longitude: 0,
+                customOptions: false, 
                 openTime: new Date(),
                 closeTime: new Date(),
                 private: this.private
@@ -71,6 +72,10 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
             });
         };
 
+        $scope.setCustomOptionsOpposite = function(poll) {
+            poll.customOptions = !poll.customOptions;
+            console.log(poll.customOptions);
+        };
         $scope.findOne = function() {
             $scope.poll = Polls.get({
                 pollId: $stateParams.pollId

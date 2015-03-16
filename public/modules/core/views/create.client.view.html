@@ -1,46 +1,30 @@
 <section data-ng-controller="HomeController" data-ng-init="geolocate()">
-<div class = "container">
-	<!-- Title -->
-	<div style="width:100%; padding:15px; font-size: 200%; text-align: center;">
-		Create Poll
-	</div>
+  <div class = "container">
+    <!-- Title -->
+    <div style="width:100%; padding:15px; font-size: 200%; text-align: center;">
+      Create Poll
+    </div>
 
-	<!-- Public or Private -->
-	<div class="btn-group btn-group-justified">
-	    <a ng-click="setPublic()"  data-ng-class="isPublic()" class="btn btn-flat btn-lg">Public</a>
-	    <a ng-click="setPrivate()" data-ng-class="isPrivate()" class="btn btn-flat btn-lg">Private</a>
-	</div>
+    <!-- Public or Private -->
+    <div class="btn-group btn-group-justified">
+      <a ng-click="setPublic()"  data-ng-class="isPublic()" class="btn btn-flat btn-lg">Public</a>
+      <a ng-click="setPrivate()" data-ng-class="isPrivate()" class="btn btn-flat btn-lg">Private</a>
+    </div>
 
-  <br/>
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control" ng-model="poll.name" placeholder="Poll Name">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
+    <br/>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+	<div class = "input-group">
+	  <span class="input-group-addon">
+	    <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+	  </span>
+	  <input type="text" class="form-control" ng-model="poll.name" placeholder="Poll Name">
+	</div>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
   </div>
-</div>
-<div class = "container">
-  <br/>
-  <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-	  <div class = "input-group">
-	  	 <span class="input-group-addon">
-	  	 	<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-	  	 </span>
-	  	 <input type="text" class="form-control" ng-model="poll.question"  placeholder="Poll Question">
-	  </div>
-	  </div>
-	<div class="col-lg-2"></div>
-  </div>
-</div>
-<div data-ng-repeat="choice in choices track by $index">
   <div class = "container">
     <br/>
     <div class="row">
@@ -48,27 +32,52 @@
       <div class="col-lg-8">
 	<div class = "input-group">
 	  <span class="input-group-addon">
-	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 	  </span>
-	  <input type="text" class="form-control" ng-model="poll.answers[choice - 1]" placeholder="Response Option">
+	  <input type="text" class="form-control" ng-model="poll.question"  placeholder="Poll Question">
 	</div>
       </div>
       <div class="col-lg-2"></div>
     </div>
   </div>
-</div>
-<div class = "container">
+  <div data-ng-repeat="choice in choices track by $index">
+    <div class = "container">
+      <br/>
+      <div class="row">
+	<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	  <div class = "input-group">
+	    <span class="input-group-addon">
+	      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    </span>
+	    <input type="text" class="form-control" ng-model="poll.answers[choice - 1]" placeholder="Response Option">
+	  </div>
+	</div>
+	<div class="col-lg-2"></div>
+      </div>
+    </div>
+  </div>
+  <div class = "container">
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
-	<!-- Add option button -->
-	<div type="submit" ng-click="addResponse(poll.answers)" class="btn-group" role="group" aria-label="...">
-	  <a href="javascript:void(0)" class="btn btn-primary">
-	  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-	  	<span style="padding-left: 10px;">Add Option</span>
-	  </a>
-	</div>
-    <div type="submit" ng-click="create()" class="btn btn-warning btn-block btn-large">Submit</div>
+      <!-- Add option button -->
+      <div type="submit" ng-click="addResponse(poll.answers)" class="btn-group" role="group" aria-label="...">
+	<a href="javascript:void(0)" class="btn btn-primary">
+	  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  <span style="padding-left: 10px;">Add Option</span>
+	</a>
+      </div>
+     <!-- <div type="submit" ng-click="setCustomOptionsOpposite(poll)" class="btn btn-warning btn-block btn-large">Submit</div> -->
+     <div class="col-lg-6">
+       <div class="input-group">
+	 <span class="input-group-addon">
+	 Allow custom poll options?
+           <input type="checkbox" ng-click="setCustomOptionsOpposite(poll)" ng-model = "poll.customOptions" aria-label="...">
+	 </span>
+       </div><!-- /input-group -->
+     </div><!-- /.col-lg-6 -->
+      <div type="submit" ng-click="create()" class="btn btn-warning btn-block btn-large">Submit</div>
     </div>
     <div class="col-lg-2"></div>
-</div>
+  </div>
 </section>
