@@ -46,7 +46,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 //longitude: this.position.coords.longitude,
                 latitude: 0,
                 longitude: 0,
-                customOptions: this.poll.question,
+                customOptions: this.poll.customOptions,
                 openTime: new Date(),
                 closeTime: new Date(),
                 private: this.private
