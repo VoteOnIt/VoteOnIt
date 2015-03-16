@@ -14,8 +14,8 @@ var PollSchema = new Schema({
         type: String,
         trim: true
     },
-    createdAt: {type: Date, expires:((24*60*60*7)*1000), default:Date.now},
-    //Sets things to expire in a week. Poll expire here! Convert to milliseconds!
+    createdAt: {type: Date, /*expires:(Date.now + (24*60*60*7)*1000) ,*/ default:Date.now},
+    //Sets things to expire in a week. Poll expire here! But can't get it working!
     question: {
         type: String,
         trim: true
