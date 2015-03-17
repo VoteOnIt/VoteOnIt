@@ -36,6 +36,11 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         $scope.addResponse = function(answers) {
             $scope.choices.push(($scope.choices.length + 1));
         };
+
+        $scope.addVoteResponse = function(poll) {
+            poll.answers.push((poll.answers.length + 1));
+            poll.responses.push((0));
+        };
         $scope.create = function() {
             var poll = new Polls({
                 name: this.poll.name,

@@ -11,9 +11,13 @@
 </div>
 
 <div ng-show="showCreateCustomOptions(poll)"
-     <div class="jumbotron">
-         <p data-ng-bind="poll.question"></p>
-     </div>
+
+      <div type="submit" ng-click="addVoteResponse(poll)" class="btn-group" role="group" aria-label="...">
+	<a href="javascript:void(0)" class="btn btn-primary">
+	  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	  <span style="padding-left: 10px;">Add Option</span>
+	</a>
+      </div>
 </div>
 
 
