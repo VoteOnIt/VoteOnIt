@@ -1,4 +1,4 @@
-<section data-ng-controller="HomeController" data-ng-init="findOne();voteInit()">
+<section data-ng-controller="HomeController" data-ng-init="findOne();voteInit(); madeNew = true">
 <br/>
 <div class="jumbotron">
     <p data-ng-bind="poll.question"></p>
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div ng-show="showCreateCustomOptions(poll)"
+<div ng-show="showCreateCustomOptions(poll) && madeNew"
 
      <div type="submit" ng-click="addVoteResponse(poll)" class="btn-group" role="group" aria-label="...">
 	 <a href="javascript:void(0)" class="btn btn-primary">
@@ -18,12 +18,14 @@
 	     <span style="padding-left: 10px;">Add Option</span>
 	 </a>
 
-     <input type="text" class="form-control"
-            ng-model="newText"
-            placeholder="Response Option">
      </div>
 </div>
 
-
+<div ng-show="showCreateCustomOptions(poll) && madeNew"
+     <div class="input-group">
+         <input type="text" class="form-control" ng-model = "newText" placeholder="New Response" aria-describedby="basic-addon2">
+         <span class="input-group-addon" id="basic-addon2">@example.com</span>
+     </div>
+</div>
 </section>
 
