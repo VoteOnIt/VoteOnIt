@@ -36,6 +36,17 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         $scope.addResponse = function(answers) {
             $scope.choices.push(($scope.choices.length + 1));
         };
+        
+        $scope.voteInit = function(){
+            $scope.newText;
+        };
+
+        $scope.addVoteResponse = function(poll) {
+            poll.answers.push(($scope.newText));
+            poll.responses.push((0));
+            $scope.madeNew = false;
+            //poll.customOptions = false;
+        };
         $scope.create = function() {
             var poll = new Polls({
                 name: this.poll.name,
@@ -46,6 +57,7 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 //longitude: this.position.coords.longitude,
                 latitude: 0,
                 longitude: 0,
+                customOptions: this.poll.customOptions,
                 openTime: new Date(),
                 closeTime: new Date(),
                 private: this.private
@@ -70,7 +82,14 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
                 $scope.error = errorResponse.data.message;
             });
         };
-
+        $scope.showCreateCustomOptions = function(poll){
+            console.log(poll.customOptions);
+            return poll.customOptions;
+        };
+        $scope.setCustomOptionsOpposite = function(poll) {
+            $scope.poll.customOptions = !$scope.poll.customOptions;
+            console.log($scope.poll.customOptions);
+        };
         $scope.findOne = function() {
             $scope.poll = Polls.get({
                 pollId: $stateParams.pollId

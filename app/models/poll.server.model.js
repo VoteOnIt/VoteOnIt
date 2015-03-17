@@ -15,7 +15,10 @@ var PollSchema = new Schema({
         trim: true
     },
     createdAt: {type: Date, expireAfterSeconds:((24*60*60*7))},
-    //Sets things to expire in a week. Poll expire here! 
+    //Polls expire here!
+    customOptions: {
+        type: Boolean
+    },
     question: {
         type: String,
         trim: true
