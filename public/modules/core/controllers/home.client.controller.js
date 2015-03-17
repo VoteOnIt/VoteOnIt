@@ -36,10 +36,15 @@ angular.module('core').controller('HomeController', ['$scope', '$q', '$statePara
         $scope.addResponse = function(answers) {
             $scope.choices.push(($scope.choices.length + 1));
         };
+        
+        $scope.voteInit = function(){
+            $scope.newText;
+        };
 
         $scope.addVoteResponse = function(poll) {
-            poll.answers.push((poll.answers.length + 1));
+            poll.answers.push(($scope.newText));
             poll.responses.push((0));
+            //poll.customOptions = false;
         };
         $scope.create = function() {
             var poll = new Polls({
