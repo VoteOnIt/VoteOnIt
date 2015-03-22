@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
     Poll.find().sort({
-        date: 1
+        createdAt: 1
     }).populate('user', 'displayName').exec(function(err, polls) {
         if (err) {
             return res.status(400).send({
