@@ -17,6 +17,6 @@
 body .well
 .container .well.well-sm,
 .container-fluid .well.well-sm {
-  padding: 10px;
-  padding-bottom: 2px;
+    padding: 10px;
+    padding-bottom: 2px;
 }

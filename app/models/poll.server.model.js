@@ -14,36 +14,37 @@ var PollSchema = new Schema({
         type: String,
         trim: true
     },
-    createdAt: {type: Date, expireAfterSeconds:((24*60*60*7))},
-    //Polls expire here!
-    customOptions: {
-        type: Boolean
-    },
     question: {
         type: String,
-        trim: true
+        trim: true,
+        required: true
     },
     answers: {
         type: [String],
-        trim: true
-    },
-    private: {
-        type: Boolean
+        trim: true,
+        required: true
     },
     responses: {
-        type: [Number]
+        type: [Number],
+        default: []
+    },
+    private: {
+        type: Boolean,
+        default: false
+    },
+    created: {
+        type: Date,
+        expireAfterSeconds: 604800
+    },
+    customOptions: {
+        type: Boolean,
+        default: false
     },
     latitude: {
         type: Number
     },
     longitude: {
         type: Number
-    },
-    openTime: {
-        type: Date
-    },
-    closeTime: {
-        type: Date
     }
 });
 
